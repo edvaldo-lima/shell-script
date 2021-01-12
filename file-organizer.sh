@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# FILE-organizer.sh - Organize files according it's type.
+# file-organizer.sh - Organize files according it's type.
 #
 # Autor:      Edvaldo Lima
 # Manutenção: Edvaldo Lima

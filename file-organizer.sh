@@ -23,8 +23,9 @@
 # -------------------------------------------------------------------------------------- -#
 
 # ------------------------------- VARIABLES --------------------------------------------- #
-TIME_STAMP=$(date +%F,%H:%M:%S)
-LOGFILE=~/Scripts/FILEorganizer_$CURRENT_DATE.log
+CURRENT_DATE=$(date "+%Y%m%d")
+TIME_STAMP=$(date "+%F %H:%M:%S")
+LOGFILE=~/Scripts/fileorganizer_$CURRENT_DATE.log
 # ------------------------------- EXECUTION --------------------------------------------- #
 cd ~/Downloads
 
@@ -32,14 +33,14 @@ cd ~/Downloads
 [ ! -d csv,docx,jpg,log,mis,pdf,png,txt,xlsx ] && \
 mkdir {csv,docx,jpg,log,mis,pdf,png,txt,xlsx} 1> /dev/null 2>&1
 
-# list FILEs only
+# list files only
 FILE_LIST=$(find . -maxdepth 1 -type f | awk -F / '{ print $2 }')
 
 echo " " >> $LOGFILE
 echo "$TIME_STAMP ********* Start of Script *********" >> $LOGFILE
 echo " " >> $LOGFILE
 
-# loop through the FILE list and moving FILEs according FILE type
+# loop through the file list and move files according type
 for FILE in $FILE_LIST
 do
   case $FILE in
